@@ -89,6 +89,7 @@ namespace ive {
 #define IVELINESTIPPLE                  0x00001134
 #define IVEPOLYGONSTIPPLE               0x00001135
 #define IVETEXTURE2DARRAY               0x00001136
+#define IVETEXTUREBUFFER                0x00001137
 
 // Drawables
 #define IVEDRAWABLE                     0x00001000

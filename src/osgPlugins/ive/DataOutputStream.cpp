@@ -39,6 +39,7 @@
 #include "Texture2D.h"
 #include "Texture2DArray.h"
 #include "Texture3D.h"
+#include "TextureBuffer.h"
 #include "TextureCubeMap.h"
 #include "TextureRectangle.h"
 #include "TexEnv.h"
@@ -1072,6 +1073,10 @@ void DataOutputStream::writeStateAttribute(const osg::StateAttribute* attribute)
         else if(dynamic_cast<const osg::Texture2DArray*>(attribute)){
             ((ive::Texture2DArray*)(attribute))->write(this);
         }
+		// This is a Texture2Buffer
+		else if (dynamic_cast<const osg::TextureBuffer*>(attribute)) {
+			((ive::TextureBuffer*)(attribute))->write(this);
+		}
         // This is a TextureCubeMap
         else if(dynamic_cast<const osg::TextureCubeMap*>(attribute)){
             ((ive::TextureCubeMap*)(attribute))->write(this);

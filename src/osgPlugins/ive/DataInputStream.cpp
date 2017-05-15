@@ -38,6 +38,7 @@
 #include "Texture2D.h"
 #include "Texture2DArray.h"
 #include "Texture3D.h"
+#include "TextureBuffer.h"
 #include "TextureCubeMap.h"
 #include "TextureRectangle.h"
 #include "TexEnv.h"
@@ -1443,6 +1444,10 @@ osg::StateAttribute* DataInputStream::readStateAttribute()
         attribute = new osg::Texture3D();
         ((ive::Texture3D*)(attribute.get()))->read(this);
     }
+	else if (attributeID == IVETEXTUREBUFFER) {
+		attribute = new osg::TextureBuffer();
+		((ive::TextureBuffer*)(attribute.get()))->read(this);
+	}
     else if(attributeID == IVETEXTURECUBEMAP){
         attribute = new osg::TextureCubeMap();
         ((ive::TextureCubeMap*)(attribute.get()))->read(this);
