@@ -605,7 +605,8 @@ void StandardShadowMap::ViewData::init( ThisClass *st, osgUtil::CullVisitor *cv 
 
         // optimization attributes
         osg::Program* program = new osg::Program;
-        stateset->setAttribute( program, osg::StateAttribute::OVERRIDE | osg::StateAttribute::ON );
+		//Disable state override, this let us override shadow shader
+        //stateset->setAttribute( program, osg::StateAttribute::OVERRIDE | osg::StateAttribute::ON );
         stateset->setMode
             ( GL_LIGHTING, osg::StateAttribute::OVERRIDE | osg::StateAttribute::OFF );
         stateset->setMode
